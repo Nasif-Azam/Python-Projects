@@ -1,0 +1,3 @@
+pyinstaller --onefile -w -i "icon.ico" Run_Cleaner.py
+
+pyinstaller Run_Clener.spec --onefile -i "icon.ico"

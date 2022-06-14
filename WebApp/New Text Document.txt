@@ -1,0 +1,20 @@
+PS D:\Collection\Programming Languages\Phython\WebApp> python manage.py shell
+Python 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from django.contrib.auth import get_user_model
+>>> list(get_user_model().objects.filter(is_superuser=True).values_list('username', flat=True))
+['Nasif_Azam']
+>>>
+>>>
+>>> from django.contrib.auth import get_user_model
+>>> def reset_password(u, password):
+...     try:
+...             user = get_user_model().obejcts.get(username=u)
+...     except:
+...             return "User not found"
+...     user.set_password(password)
+...     user.save()
+...     return "Pass change successfully"
+...
+>>> reset_password('Nasif_Azam', 'nasif')
